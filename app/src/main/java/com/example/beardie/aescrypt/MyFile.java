@@ -1,7 +1,14 @@
 package com.example.beardie.aescrypt;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Environment;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import java.io.File;
@@ -30,7 +37,6 @@ public class MyFile {
         for (int i = 0; i < fileNames.size(); i++) {
             String name = fileNames.get(i);
             File file = new File(Environment.getExternalStorageDirectory().getPath() + "/decrypt/" + name);
-            //File file = new File("mnt/shell/storage/0/encrypt/" + name);
             FileInputStream fileStream = null;
             try {
                 fileStream = new FileInputStream(file);
@@ -122,5 +128,7 @@ public class MyFile {
             Log.d("DEBUG", "Directory /" + directory + " already exists");
         }
     }
+
+
 
 }
