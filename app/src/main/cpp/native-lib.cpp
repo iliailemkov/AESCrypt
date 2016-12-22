@@ -20,7 +20,7 @@ Java_com_example_beardie_aescrypt_MyFile_decryptData(JNIEnv *env, jobject instan
     for (int i = 0; i < op; i++){
         uint8_t *d = ((uint8_t*) encr) + 16 * i;
         uint8_t *b = ((uint8_t*) buffer) + 16 * i;
-        AES128_ECB_encrypt(d, AES_KEY, b);
+        AES128_ECB_decrypt(d, AES_KEY, b);
     }
 
     env->ReleaseByteArrayElements(encr_, encr, 0);
